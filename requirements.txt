@@ -1,0 +1,7 @@
+requests
+googletrans 
+pythainlp
+re
+transformers 
+json
+streamlit 
