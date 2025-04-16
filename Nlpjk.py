@@ -14,11 +14,11 @@ def load_summarizer():
         tokenizer = AutoTokenizer.from_pretrained("csebuetnlp/mT5_multilingual_XLSum")
         return pipeline("summarization", model="csebuetnlp/mT5_multilingual_XLSum", tokenizer=tokenizer)
     except Exception as e:
-        st.warning(f"⚠️ ไม่สามารถโหลดโมเดล mT5 ได้ <|im_start|>ลองใช้โมเดลสำรอง...")
+        st.warning(f"⚠️ ไม่สามารถโหลดโมเดล mT5 ได้ ลองใช้โมเดลสำรอง...")
         try:
             return pipeline("summarization", model="facebook/bart-large-cnn")
         except Exception as e_bart:
-            st.error(f"❌ ไม่สามารถโหลดโมเดล<|im_start|>ข้อความได้ โปรดตรวจสอบการเชื่อมต่อ<|im_start|>เทอร์เน็ต")
+            st.error(f"❌ ไม่สามารถโหลดโมเดลข้อความได้ โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ต")
             return None
 
 # โหลดคำศัพท์จาก JSON
